@@ -12,7 +12,22 @@ type Props = {
 };
 
 const Home = ({ setSelectedPage }: Props) => {
-  return <div>Home</div>;
+  const isAboveMediumScreens = useMediaQuery("(min-width:1060px)");
+
+  return (
+    <section id="home" className="gap-16 bg-gray-20 py-10 md:h-full md:pb-0">
+      {/* IMAGE AND MAIN HEADER */}
+      <div>
+        {/* MAIN HEADER*/}
+        <div>
+          {/* HEADINGS */}
+          <div></div>
+        </div>
+        {/* IMAGE */}
+        <div></div>
+      </div>
+    </section>
+  );
 };
 
 export default Home;
