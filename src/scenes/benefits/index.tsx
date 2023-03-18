@@ -17,9 +17,17 @@ function Benefits({ setSelectedPage }: Props) {
       <motion.div
         onViewportEnter={() => setSelectedPage(SelectedPage.Benefits)}
       >
-        <div>
+        {/* HEADER */}
+        <div className="md:my-5 md:w-3/5">
           <HText>MORE THAN JUST A GYM.</HText>
+          <p className="my-5 text-sm">
+            We provide world class fitness equipment, trainers and classes to
+            get you to your ultimate fitness goals with ease. We provide true
+            care into each and every member.
+          </p>
         </div>
+        {/* BENEFITS */}
+        <div className="mt-5 items-center justify-between gap-8 md:flex"></div>
       </motion.div>
     </section>
   );
