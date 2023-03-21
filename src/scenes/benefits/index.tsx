@@ -7,6 +7,7 @@ import {
 } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 import Benefit from "./Benefit";
+import ActionButton from "@/shared/ActionButton";
 
 const benefits: Array<BenefitType> = [
   {
@@ -90,7 +91,7 @@ function Benefits({ setSelectedPage }: Props) {
           <div>
             {/* TITLE */}
             <div className="relative">
-              <div className="before: before: z-[1] content-abstractwaves before:absolute before:-top-20 before:-left-20">
+              <div className="before: before: z-[-1] content-abstractwaves before:absolute before:-top-20 before:-left-20">
                 <div>
                   <HText>
                     MILLIONS OF HAPPY MEMBERS GETTING{" "}
@@ -114,6 +115,13 @@ function Benefits({ setSelectedPage }: Props) {
               </p>
             </div>
             {/* BUTTON */}
+            <div className="relative mt-16">
+              <div className="before:absolute before:-bottom-20 before:right-40 before:z-[-1] before:content-sparkles">
+                <ActionButton setSelectedPage={setSelectedPage}>
+                  Join Now
+                </ActionButton>
+              </div>
+            </div>
           </div>
         </div>
       </motion.div>
