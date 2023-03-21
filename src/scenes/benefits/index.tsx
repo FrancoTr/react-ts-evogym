@@ -83,6 +83,39 @@ function Benefits({ setSelectedPage }: Props) {
             />
           ))}
         </motion.div>
+        {/* GRAPHICS AND DESCRIPTION */}
+        <div>
+          <img src="" alt="" />
+          {/* DESCRIPTION */}
+          <div>
+            {/* TITLE */}
+            <div className="relative">
+              <div className="before: before: z-[1] content-abstractwaves before:absolute before:-top-20 before:-left-20">
+                <div>
+                  <HText>
+                    MILLIONS OF HAPPY MEMBERS GETTING{" "}
+                    <span className="text-primary-500">FIT</span>
+                  </HText>
+                </div>
+              </div>
+            </div>
+            {/* DESCRIPTION */}
+            <div>
+              <p className="my-5">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+                velit quisquam voluptatum, harum molestiae fugit. Natus sint,
+                soluta, necessitatibus atque hic quasi suscipit perferendis
+                commodi adipisci reiciendis repellendus!
+              </p>
+              <p className="mb-5">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error,
+                nostrum impedit. Esse eos minus quod, recusandae ex deserunt
+                repellendus quae explicabo?
+              </p>
+            </div>
+            {/* BUTTON */}
+          </div>
+        </div>
       </motion.div>
     </section>
   );
