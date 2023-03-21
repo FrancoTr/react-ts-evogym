@@ -33,6 +33,13 @@ type Props = {
   setSelectedPage: (value: SelectedPage) => void;
 };
 
+const container = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.2 },
+  },
+};
+
 function Benefits({ setSelectedPage }: Props) {
   return (
     <section id="benefits" className="w-6/6 mx-auto min-h-full py-20">
@@ -49,7 +56,13 @@ function Benefits({ setSelectedPage }: Props) {
           </p>
         </div>
         {/* BENEFITS */}
-        <div className="mt-5 items-center justify-between gap-8 md:flex">
+        <motion.div
+          className="mt-5 items-center justify-between gap-8 md:flex"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={container}
+        >
           {benefits.map((benefit: BenefitType) => (
             <Benefit
               key={benefit.title}
@@ -59,7 +72,7 @@ function Benefits({ setSelectedPage }: Props) {
               setSelectedPage={setSelectedPage}
             />
           ))}
-        </div>
+        </motion.div>
       </motion.div>
     </section>
   );
