@@ -86,6 +86,22 @@ function ContactUs({ setSelectedPage }: Props) {
                     "Max length is 100 char."}
                 </p>
               )}
+              <input
+                className={inputStyles}
+                type="text"
+                placeholder="EMAIL"
+                {...register("email", {
+                  required: true,
+                  pattern: /^[A-Z]-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,1}$/i,
+                })}
+              />
+              {errors.email && (
+                <p className="mt-1 text-primary-500">
+                  {errors.email.type === "required" &&
+                    "This field is required."}
+                  {errors.email.type === "pattern" && "Invalid email address."}
+                </p>
+              )}
             </form>
           </motion.div>
         </div>
