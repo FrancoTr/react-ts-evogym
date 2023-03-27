@@ -9,6 +9,8 @@ type Props = {
 };
 
 function ContactUs({ setSelectedPage }: Props) {
+  const inputStyles = `w-full rounded-lg bg-primary-300 px-5 py-3 placeholder-white`;
+
   const {
     register,
     trigger,
@@ -67,7 +69,24 @@ function ContactUs({ setSelectedPage }: Props) {
               onSubmit={onSubmit}
               action="https://formsubmit.co/a@email.com"
               method="POST"
-            ></form>
+            >
+              <input
+                className={inputStyles}
+                type="text"
+                placeholder="NAME"
+                {...register("name", {
+                  required: true,
+                  maxLength: 100,
+                })}
+              />
+              {errors.name && (
+                <p className="mt-1 text-primary-500">
+                  {errors.name.type === "required" && "This field is required."}
+                  {errors.name.type === "maxLength" &&
+                    "Max length is 100 char."}
+                </p>
+              )}
+            </form>
           </motion.div>
         </div>
       </motion.div>
