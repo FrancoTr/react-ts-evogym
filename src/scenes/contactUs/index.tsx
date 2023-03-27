@@ -9,7 +9,7 @@ type Props = {
 };
 
 function ContactUs({ setSelectedPage }: Props) {
-  const inputStyles = `w-full rounded-lg bg-primary-300 px-5 py-3 placeholder-white`;
+  const inputStyles = `mt-5 w-full rounded-lg bg-primary-300 px-5 py-3 placeholder-white`;
 
   const {
     register,
@@ -102,9 +102,10 @@ function ContactUs({ setSelectedPage }: Props) {
                   {errors.email.type === "pattern" && "Invalid email address."}
                 </p>
               )}
-              <input
+              <textarea
                 className={inputStyles}
-                type="text"
+                rows={4}
+                cols={40}
                 placeholder="MESSAGE"
                 {...register("message", {
                   required: true,
@@ -119,6 +120,13 @@ function ContactUs({ setSelectedPage }: Props) {
                     "Max length is 2000 char."}
                 </p>
               )}
+
+              <button
+                type="submit"
+                className="mt-5 rounded-lg bg-secondary-500 px-20 py-3 transition duration-500 hover:text-white"
+              >
+                SUBMIT
+              </button>
             </form>
           </motion.div>
         </div>
